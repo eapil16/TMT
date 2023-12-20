@@ -69,6 +69,15 @@ body {
           flex-direction: column;
 }
 
+.swiper-slide {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  display: none;
+}
+
 main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -116,6 +125,10 @@ a:hover {
 }
 
 body.hidd {
+  overflow: hidden;
+}
+
+.hidden-body {
   overflow: hidden;
 }
 
@@ -473,6 +486,81 @@ ul.socail li a:hover svg path {
   fill: #00A0FF;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
+}
+
+.main-prev {
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: calc(50% - 32px);
+  left: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.main-prev:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-prev img {
+  width: auto;
+  max-width: 10px;
+}
+
+.main-next {
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: calc(50% - 32px);
+  right: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.main-next:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-next img {
+  width: auto;
+  max-width: 10px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.swiper-button-disabled:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .main-menu {
@@ -2459,6 +2547,16 @@ a.header-bottom__actions_link.search-button {
   }
   .catalog-menu {
     max-width: 510px;
+  }
+  .button-blue:hover {
+    color: #fff;
+    background: #00A0FF;
+  }
+  .catalog-button.active {
+    background: #E84CB2;
+  }
+  .calalog-block {
+    margin: -1px 0 0 0;
   }
 }
 

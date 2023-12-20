@@ -7,13 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!$(this).hasClass('menu-toggle-cont_active')) { 
       $(this).addClass('menu-toggle-cont_active'); 
       $('.fixed-menu').slideDown(300); 
-      $('body').addClass('hidd'); 
+      $('body').addClass('hidden-body'); 
+      $('.catalog-button').removeClass('active');
+      $('.calalog-block').fadeOut();
+      $('body').removeClass('hidd');
     } else { 
       $(this).removeClass('menu-toggle-cont_active'); 
       $('.fixed-menu').slideUp(300);
-      $('body').removeClass('hidd');
+      $('body').removeClass('hidden-body');
+     
     } 
   }); 
+
+  const swiper1 = new Swiper(".main-slider", {
+    loop: false,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    speed: 800,
+    navigation: {
+      nextEl: ".main-next",
+      prevEl: ".main-prev",
+    },
+  });
 
   const menuItem = document.querySelectorAll('.catalog-menu__item');
   
@@ -61,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     $(this).toggleClass('active'); 
     $('.calalog-block').slideToggle(); 
     $('body').toggleClass('hidd'); 
-
+    $('.menu-toggle-cont').removeClass('menu-toggle-cont_active'); 
+    $('.fixed-menu').fadeOut();
+    $('body').removeClass('hidden-body');
     const heightHeader = document.querySelector('.header').clientHeight;
     document.querySelector('.calalog-block').style.top = `${heightHeader}px`;
 
