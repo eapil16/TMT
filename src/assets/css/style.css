@@ -279,9 +279,60 @@ body.hidd {
 }
 
 .header-bottom__catalog {
-  min-width: 115px;
-  max-width: 115px;
+  min-width: 146px;
+  max-width: 146px;
   margin: 0 30px 0 0;
+}
+
+.header-bottom__catalog .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-bottom__catalog .button .button-toggle {
+  width: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 2px;
+  position: relative;
+  background: url(../images/menu.svg) 0 0 no-repeat;
+  margin: 0 12px 0 0;
+}
+
+.header-bottom__catalog .button .button-toggle:before {
+  position: absolute;
+  content: "";
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  height: 2px;
+  width: 19px;
+  left: 0;
+  top: -6px;
+  background: url(../images/menu.svg) 0 0 no-repeat;
+}
+
+.header-bottom__catalog .button .button-toggle:after {
+  position: absolute;
+  content: "";
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  height: 2px;
+  background: url(../images/menu.svg) 0 0 no-repeat;
+  position: absolute;
+  left: 0;
+  width: 13px;
+  top: 6px;
+}
+
+.header-bottom__catalog .button .text {
+  color: #fff;
 }
 
 .header-bottom__search {
@@ -708,8 +759,23 @@ ul.socail li a:hover svg path {
           box-shadow: none;
 }
 
-.catalog-button.active {
-  background: #E84CB2;
+.catalog-button.active .button-toggle {
+  height: 0;
+}
+
+.catalog-button.active .button-toggle:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: auto;
+  background: #fff;
+}
+
+.catalog-button.active .button-toggle:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: auto;
+  background: #fff;
+  width: 19px;
 }
 
 .calalog-block {
